@@ -25,6 +25,7 @@ Vue.component('header-component', HeaderComponent)
 import VueRouter from 'vue-router';
 import HeaderComponent from "./components/HeaderComponent";
 import TaskListComponent from "./components/TaskListComponent";
+import TaskShowComponent from "./components/TaskShowComponent";
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -42,8 +43,15 @@ const router = new VueRouter({
             name: 'task.list',
             component: TaskListComponent
         },
+            {
+            path: '/tasks/:taskId',
+            name: 'task.show',
+            component: TaskShowComponent,
+            props: true
+        },
     ]
 });
+
 
 const app = new Vue({
     el: '#app',
