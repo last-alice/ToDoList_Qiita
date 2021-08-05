@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
+    public function Task()
+    {
+        return $this->hasMany('App\Models\Task');
+    }
     protected $fillable = [
             'title',
             'content',
