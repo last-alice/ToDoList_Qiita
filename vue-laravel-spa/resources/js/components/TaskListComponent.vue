@@ -50,13 +50,13 @@
                     .then((res) => {
                         this.tasks = res.data;
                     });
+            },
+                    deleteTask(id) {
+                axios.delete('/api/tasks/' + id)
+                    .then((res) => {
+                        this.getTasks();
+                });
             }
-        },
-        deleteTask(id) {
-            axios.delete('/api/tasks/' + id)
-                .then((res) => {
-                    this.getTasks();
-            });
         },
         mounted() {
             this.getTasks();
